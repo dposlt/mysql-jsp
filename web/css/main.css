@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10.6.2018, 9:50:48
+    Author     : robot
+*/
+
+h1
+{
+    position: relative;
+    color: blue;
+    text-align: center;
+    top: 30px;
+}
+
+body {
+    position: relative;
+    min-width: 320px;
+    overflow-y: scroll;
+    background-color: #cde6ec;
+}
+
+img {
+    position: absolute;
+    right: 150px;
+    top: 5px;
+    min-width: 100px;
+    max-width: 230px;
+    width: 100px;
+    height: 100px;
+}
+
+.stav {
+    position: absolute;
+    top: 200px;
+    color: brown;
+}
