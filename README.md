@@ -2,7 +2,7 @@
 
 # REQUARE
 
-# mysql
-# jru v8
-# tomcat / Bluefish
-# 
+. mysql
+. jru v8
+. tomcat / Bluefish
+ 
