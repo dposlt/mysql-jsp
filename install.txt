@@ -8,6 +8,8 @@ nastarovtovat tomcat /tomcat8/bin/./startup.sh
 v menu do managera / vybar war a deploy.....
 
 
-nebo do tomcat8/webapps/
-vlozit war a rozbalit
+nebo lepsi zpusob je vlozit do tomcat8/webapps/ war soubor
+a pokud je nastaven autoDeploy na true sam se rozbali
+autoDeploy je nastaven v /tomcat8/conf/server.xml
+
 
