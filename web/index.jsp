@@ -5,8 +5,8 @@
 --%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="SoutezBene.Hello"%>
 <%@page import="SoutezBene.DBConnect"%>
+<%@page import="SoutezBene.GetUser"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,25 +18,44 @@
         
         Date date = new Date();
         DBConnect conn = new DBConnect();
+        GetUser user = new GetUser();
         
-        Hello pozdrav = new Hello();
     %>
     <body>
         
         <h1>Soutěž BenePlus</h1>
-        <p class="stav">Aktuální stav k: <%= date %></p>
+        
         <div>
             <img src="${pageContext.request.contextPath}/Image/cat-02.svg" />
         </div>
         
+            <%-- opravneni --%>
+            
         <div>
-            
-            <%-- <%= conn.getData() %>
-            <%= conn.getCount() %> --%>
             <%
-                out.print(conn.getData());
-            %>
-            
+                String sso;
+                sso = "212437054d";
+                
+                if (user.GetUserName().equals(sso)) {
+            %> 
+        
+        <p class="stav">Aktuální stav k: <%= date %></p>
+        <span class="stav-count"> 
+            <%
+                out.print("Aktuální počet zaregistrovaných čísel: "+ conn.getCount());
+            %>   
+        </span>
+        <span class="stav-count-archive"> 
+            <%
+                int result = conn.getCount() + conn.getCountArchive();
+                out.print("Aktuální počet <b>VŠECH</b> zaregistrovaných čísel: "+ result);
+            %>   
+        </span>
+   
+            <% } else { %>
+            <H3>Nemate dostatecna opravneni - Obraďte se na správce systému: <span class = "spravce">Chlebusová, Lenka</span></H3>
+            <% } %>
         </div>
+        
     </body>
 </html>

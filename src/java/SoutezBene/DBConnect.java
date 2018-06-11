@@ -19,14 +19,14 @@ public class DBConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/beneplus","root","5?o<dJ2kDBfp");
+            conn = DriverManager.getConnection("jdbc:mysql://mysqldbx:3306/beneplus","beneplus","+4:TW?bgl!HkQ0wgt#:ZtQip!");
             st = conn.createStatement();
 
         }catch(Exception ex) {
             System.out.println("Error: " + ex);
         }
     }
-    public String getData() {
+    public void getData() {
         try{
             String query = "select * from phone_number";
             rs = st.executeQuery(query);
@@ -35,9 +35,8 @@ public class DBConnect {
             while(rs.next()){
                 String id = rs.getString("id");
                 String phone = rs.getString("number");
-                //System.out.println("Id: "+id+ "   " +"Phone "+phone);
-                return ("Id: "+id+ "   " +"Phone "+phone);
-
+                System.out.println("Id: "+id+ "   " +"Phone "+phone);
+                
 
                 //System.out.println(st.executeQuery("select count("+id+") from phone_number"));
             }
@@ -46,13 +45,13 @@ public class DBConnect {
 
 
         }catch (Exception ex) {
-            //System.out.println(ex);
+            System.out.println(ex);
             //return ex;
         }
-        return null;
+        
     }
 
-     public void getCount() {
+     public int getCount() {
         try{
             String query = "select COUNT(id) AS count from phone_number ";
             rs = st.executeQuery(query);
@@ -60,15 +59,41 @@ public class DBConnect {
 
             while(rs.next()){
                 int IdCount = rs.getInt("count");
-                System.out.println(IdCount);
+                //System.out.println(IdCount);
+                return IdCount;
             }
             //
 
 
 
-        }catch (Exception ex) {
-            System.out.println(ex);
+        }catch (SQLException ex) {
+            
+            //System.out.println(ex);
+            
         }
+        return 0;
+    }
+     
+    public int getCountArchive() {
+        try{
+            String query = "select COUNT(id) AS count from phone_number_archive";
+            rs = st.executeQuery(query);
+            
+            while(rs.next()){
+                int IdCount = rs.getInt("count");
+                //System.out.println(IdCount);
+                return IdCount;
+            }
+            //
+
+
+
+        }catch (SQLException ex) {
+            
+            //System.out.println(ex);
+            
+        }
+        return 0;
     }
 
     

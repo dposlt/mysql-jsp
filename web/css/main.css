@@ -8,12 +8,15 @@ and open the template in the editor.
     Author     : robot
 */
 
-h1
+h1, h3
 {
     position: relative;
     color: blue;
     text-align: center;
     top: 30px;
+}
+h3 {
+    top: 40px;
 }
 
 body {
@@ -37,4 +40,16 @@ img {
     position: absolute;
     top: 200px;
     color: brown;
+}
+.stav-count, .stav-count-archive {
+    position: absolute;
+    top: 250px;
+    color: brown;
+}
+
+.stav-count-archive {
+    top: 270px;
+}
+.spravce {
+    color: red;
 }

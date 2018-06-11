@@ -6,11 +6,14 @@
 package SoutezBene;
 /**
  *
- * @author robot
+ * @author 212437054
  */
-public class Hello {
-    public String testMethod(){
-        return "Databaze";
-    }
+
+
+public class GetUser {
     
+    public String GetUserName() {
+        String username = System.getProperty("user.name");
+        return username;
+    }
 }
