@@ -18,8 +18,8 @@ public class DBConnect {
     public DBConnect() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname","username","pass");
+	
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/beneplus","beneplus","pass");
             st = conn.createStatement();
 
         }catch(Exception ex) {
