@@ -11,7 +11,7 @@ INSERT INTO phone_number (number, date) VALUES ('777333222',NOW());
 CREATE TABLE access (
  ID int NOT NULL UNIQUE AUTO_INCREMENT,
  name varchar(50) NOT NULL,
- heslo varchar(100) NOT NULL, 
+ pwd varchar(100) NOT NULL, 
  date DATETIME NOT NULL,
  PRIMARY KEY (ID)
 );
@@ -23,4 +23,4 @@ CREATE TABLE login (
  PRIMARY KEY (ID)
 );
 
-INSERT INTO access (name,heslo) VALUES ('david','heslo');
+INSERT INTO access (name,pwd,date) VALUES ('david',SHA1('heslo'),now());
