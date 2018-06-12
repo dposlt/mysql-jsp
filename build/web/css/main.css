@@ -13,7 +13,7 @@ h1, h3
     position: relative;
     color: blue;
     text-align: center;
-    top: 30px;
+    top: 20px;
 }
 h3 {
     top: 40px;
@@ -26,15 +26,7 @@ body {
     background-color: #cde6ec;
 }
 
-img {
-    position: absolute;
-    right: 150px;
-    top: 5px;
-    min-width: 100px;
-    max-width: 230px;
-    width: 100px;
-    height: 100px;
-}
+
 
 .stav {
     position: absolute;
@@ -52,4 +44,8 @@ img {
 }
 .spravce {
     color: red;
+}
+
+a:link {
+    text-decoration: none;
 }

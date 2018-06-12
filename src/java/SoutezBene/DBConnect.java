@@ -19,7 +19,7 @@ public class DBConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 	
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/beneplus","beneplus","pass");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/beneplus","root","5?o<dJ2kDBfp");
             st = conn.createStatement();
 
         }catch(Exception ex) {
