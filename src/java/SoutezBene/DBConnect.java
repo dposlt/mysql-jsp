@@ -96,5 +96,29 @@ public class DBConnect {
         return 0;
     }
 
+    public String getAccess() {
+        try{
+            String query = "select * from access";
+            rs = st.executeQuery(query);
+            
+
+            while(rs.next()){
+                String StrName = rs.getString("name");
+              
+                return StrName;
+            }
+         
+
+
+
+        }catch (SQLException ex) {
+            
+            //
+            
+        }
+        return null;
+      
+    }
+     
     
 }

@@ -7,3 +7,20 @@ CREATE TABLE phone_number (
 );
 
 INSERT INTO phone_number (number, date) VALUES ('777333222',NOW());
+
+CREATE TABLE access (
+ ID int NOT NULL UNIQUE AUTO_INCREMENT,
+ name varchar(50) NOT NULL,
+ pwd varchar(100) NOT NULL, 
+ date DATETIME NOT NULL,
+ PRIMARY KEY (ID)
+);
+
+CREATE TABLE login (
+ ID int NOT NULL UNIQUE AUTO_INCREMENT,
+ user varchar(50) NOT NULL, 
+ date DATETIME NOT NULL,
+ PRIMARY KEY (ID)
+);
+
+INSERT INTO access (name,pwd,date) VALUES ('david',SHA1('heslo'),now());

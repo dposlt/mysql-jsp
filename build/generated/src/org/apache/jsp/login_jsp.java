@@ -3,9 +3,6 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.util.Date;
-import SoutezBene.DBConnect;
-import SoutezBene.GetUser;
 
 public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -46,9 +43,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -57,14 +51,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link rel=\"stylesheet\" href=\"css/main.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/style.css\"\n");
       out.write("    </head>\n");
-      out.write("    ");
- 
-        
-        Date date = new Date();
-        DBConnect conn = new DBConnect();
-        GetUser user = new GetUser();
-        
-    
       out.write("\n");
       out.write("    <body>\n");
       out.write("        \n");
@@ -82,7 +68,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/Image/cat-02.svg\" />\n");
       out.write("                <h1>Přihlášení</h1><br>\n");
       out.write("                \n");
-      out.write("                <form>\n");
+      out.write("                <form action=\"index.jsp\" method=\"post\">\n");
       out.write("                    <input type=\"text\" name=\"user\" placeholder=\"Username\">\n");
       out.write("                    <input type=\"password\" name=\"pass\" placeholder=\"Password\">\n");
       out.write("                    <input type=\"submit\" name=\"login\" class=\"login login-submit\" value=\"login\">\n");
