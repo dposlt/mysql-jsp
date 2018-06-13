@@ -19,7 +19,7 @@ public class DBConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 	
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/beneplus","root","5?o<dJ2kDBfp");
+            conn = DriverManager.getConnection("jdbc:mysql://10.48.5.99:3306/beneplus","beneplus","+4:TW?bgl!HkQ0wgt#:ZtQip!");
             st = conn.createStatement();
 
         }catch(Exception ex) {
@@ -96,17 +96,45 @@ public class DBConnect {
         return 0;
     }
 
-    public String getAccess() {
+    public String getName() {
         try{
-            String query = "select * from access";
+            String query = "select name from access";
             rs = st.executeQuery(query);
             
 
             while(rs.next()){
                 String StrName = rs.getString("name");
-              
                 return StrName;
+                
             }
+            
+            
+         
+
+
+
+        }catch (SQLException ex) {
+            
+            //
+            
+        }
+        return null;
+      
+    }
+    
+     public String getPass() {
+        try{
+            String query = "select pwd from access";
+            rs = st.executeQuery(query);
+            
+
+            while(rs.next()){
+                String StrPass = rs.getString("pwd");
+                return StrPass;
+                
+            }
+            
+            
          
 
 
