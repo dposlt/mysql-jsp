@@ -23,4 +23,4 @@ CREATE TABLE login (
  PRIMARY KEY (ID)
 );
 
-INSERT INTO access (name,pwd,date) VALUES ('david',SHA1('heslo'),now());
+INSERT INTO access (name,pwd,date) VALUES ('bene','beneplus',now());

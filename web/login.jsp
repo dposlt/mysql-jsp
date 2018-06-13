@@ -3,10 +3,12 @@
     Created on : 12.6.2018, 19:52:42
     Author     : robot
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Date"%>
 <%@page import="SoutezBene.DBConnect"%>
 <%@page import="SoutezBene.GetUser"%>
+
 
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
         <% 
-        
+       
         Date date = new Date();
         DBConnect conn = new DBConnect();
         GetUser user = new GetUser();
@@ -30,12 +32,15 @@
             String User = request.getParameter("user");
             String passwd = request.getParameter("pass");
             
-            String DbUser = conn.getAccess();
-           
+            
+            String DbUser = conn.getName();
+            String DbPass = conn.getPass();
+            
             
                       
-            if (DbUser.equals(User)) {
+            if (DbUser.equals(User) && DbPass.equals(passwd) )  {
              %>
+             <h1>Soutěž BenePlus</h1>
              <p class="stav">Aktuální stav k: <%= date %></p>
             <span class="stav-count"> 
             <%
@@ -50,7 +55,7 @@
             </span>
             
             <% } else { %>
-            <H3>Přístup odmítnut <a href="/login.jsp">Zkusti znovu</H3>
+            <H3>Přístup odmítnut <a href="/index.jsp">Zkusti znovu</H3>
             <% 
                } 
             %> 

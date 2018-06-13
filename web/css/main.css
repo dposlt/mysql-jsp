@@ -22,7 +22,6 @@ h3 {
 body {
     position: relative;
     min-width: 320px;
-    overflow-y: scroll;
     background-color: #cde6ec;
 }
 
@@ -48,4 +47,9 @@ body {
 
 a:link {
     text-decoration: none;
+}
+
+img {
+    width: 230px;
+    padding-left: 20px;
 }
