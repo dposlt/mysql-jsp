@@ -47,6 +47,13 @@
                 out.print("Aktuální počet zaregistrovaných čísel: "+ conn.getCount());
             %>   
             </span>
+            
+            <span class="stav-count"> 
+            <%
+                out.print("Aktuální počet zaregistrovaných čísel za poslední den (počítáno od půlnoci): "+ conn.getCountDnes());
+            %>   
+            </span>
+            
             <span class="stav-count-archive"> 
             <%
                 int result = conn.getCount() + conn.getCountArchive();
