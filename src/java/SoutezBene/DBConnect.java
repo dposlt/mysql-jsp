@@ -74,6 +74,28 @@ public class DBConnect {
         return 0;
     }
      
+    public int getCountDnes() {
+        try{
+            String query = "select count(number) from phone_number where created > now() - INTERVAL 1 DAY"; /** opravit **/
+            rs = st.executeQuery(query);
+            System.out.println("Recored from Databese");
+
+            while(rs.next()){
+                int IdCount = rs.getInt("count");
+                //System.out.println(IdCount);
+                return IdCount;
+            }
+            //
+
+
+
+        }catch (SQLException ex) {
+            
+            //System.out.println(ex);
+            
+        }
+        return 0;
+    }
     public int getCountArchive() {
         try{
             String query = "select COUNT(id) AS count from phone_number_archive";
