@@ -76,13 +76,13 @@ public class DBConnect {
      
     public int getCountDnes() {
         try{
-            String query = "select count(number) from phone_number where created > now() - INTERVAL 1 DAY"; /** opravit **/
+            String query = "select count(number) AS count from phone_number where created > curdate()";
             rs = st.executeQuery(query);
             System.out.println("Recored from Databese");
 
             while(rs.next()){
                 int IdCount = rs.getInt("count");
-                //System.out.println(IdCount);
+                
                 return IdCount;
             }
             //
