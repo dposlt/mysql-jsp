@@ -19,7 +19,8 @@ public class DBConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 	
-            conn = DriverManager.getConnection("jdbc:mysql://10.48.5.99:3306/beneplus","beneplus","+4:TW?bgl!HkQ0wgt#:ZtQip!");
+            //conn = DriverManager.getConnection("jdbc:mysql://10.48.5.99:3306/beneplus","beneplus","+4:TW?bgl!HkQ0wgt#:ZtQip!");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/beneplus","root","5?o<dJ2kDBfp");
             st = conn.createStatement();
 
         }catch(Exception ex) {
@@ -74,9 +75,33 @@ public class DBConnect {
         return 0;
     }
      
-    public int getCountDnes() {
+    public int getCountYesterday() {
         try{
-            String query = "select count(number) AS count from phone_number where created > curdate()";
+            String query = "select count(number) AS count from phone_number where date(created) =  curdate() -1";
+            rs = st.executeQuery(query);
+            System.out.println("Recored from Databese");
+
+            while(rs.next()){
+                int IdCount = rs.getInt("count");
+                
+                return IdCount;
+            }
+            //
+
+
+
+        }catch (SQLException ex) {
+            
+            //System.out.println(ex);
+            
+        }
+        return 0;
+        
+    }
+     
+    public int getCountToday() {
+        try{
+            String query = "select count(number) AS count from phone_number where date(created) = curdate()";
             rs = st.executeQuery(query);
             System.out.println("Recored from Databese");
 
