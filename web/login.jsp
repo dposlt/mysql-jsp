@@ -76,7 +76,7 @@
                      <tr>
                          <td>
                         <%
-                            out.print("Počet zaregistrovaných čísel za včerejšek ");
+                            out.print("Počet zaregistrovaných čísel za včerejší den ");
                         %>
                          </td>
                          <td>
